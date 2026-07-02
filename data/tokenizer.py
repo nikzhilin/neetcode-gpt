@@ -10,10 +10,7 @@ class Solution:
             frequencies = defaultdict(int)
 
             for left, right in zip(tokens, tokens[1:]):
-                frequencies[(left, right)] += 1
-
-            if not frequencies:
-                break
+                frequencies[(left, right)] += 1            
 
             best_pair = min(
                 frequencies.keys(),
