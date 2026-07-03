@@ -4,6 +4,7 @@ import torch.nn.functional as F
 
 class Solution:
     def train(self, model: nn.Module, data: torch.Tensor, epochs: int, context_length: int, batch_size: int, lr: float) -> float:                
+        model.train()
         optimizer = torch.optim.AdamW(model.parameters(), lr=lr)
         loss = None
         for epoch in range(epochs):
